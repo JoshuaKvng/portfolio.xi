@@ -1,0 +1,45 @@
+<! DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Survey Form</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="survey form.css">
+  </head>
+  <body>
+    <h1 id="title">freecodecamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve this platform</p>
+    <form id="survey-form">
+     <fieldset>
+      <label id="name-label">Input your legal first and last name <input required id="name" type="text" placeholder="Enter your name"></label>
+      <label id="email-label">Input your correct email <input required id="email" type="email" placeholder="Enter your email"></label>
+      <label id="number-label">Input your valid phone number <input required id="number" type="number" min="5" max="13" placeholder="Enter your valid phone number"></label>
+       </fieldset>
+       <fieldset>
+        <label for="referrer">How did you hear about us?
+          <select id="dropdown" name="referrer">
+            <option value="">Select an option</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="reason"> What made you join the freeCodeCamp community?</label>
+        <label for="reason"><input id="reason" type="checkbox" required name="interest" value="reason" class="inline"> Interest</label>
+        <label for="reason"><input id="reason" type="checkbox" name="occupational-requirements" value="reason" class="inline"> Occupational requirements</label>
+        <label for="reason"><input id="reason" type="checkbox" name="education" value="reason" class="inline"> Education</label>
+        <label for="reason"><input id="reason" type="checkbox" name="referral-from-a-friend" value="reason" class="inline"> Referral from a friend.</label>
+        <label for="reason"><input id="reason" type="checkbox" name="other" value="reason" class="inline"> Other</label>
+        <label for="experience">How has your experience been so far?</label>
+        <label for="very-enlightnening"><input id="very-enlightnening" type="radio" name="experience" value="experience" class="inline" /> Very enlightening.</label>
+        <label for="nice"><input id="nice" type="radio" name="experience" value="experience" class="inline" /> Nice.</label>
+        <label for="average"><input id="average" type="radio" name="experience" value="experience" class="inline" /> Average.</label>
+        <label for="bad"><input id="bad" type="radio" name="experience" value="experience" class="inline" /> Bad.</label>
+      <label for="comment"> Any comment or suggestions?
+       <textarea for="comment" placeholder="Please do well to let us know how we could improve your code learning experience"></textarea>
+      </label>
+      <input id="submit" value="Submit" type="submit" />
+     </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="portfolio 4.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Personal Portfolio Webpage</title>
+  </head>
+  <body>
+    <header class="">
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="navbar" class="container">
+        <span>
+          <ul class="navul">
+            <li class="navli">
+              <a href="#welcome-section" class="nav welcome">Welcome</a>
+            </li>
+            <li class="navli">
+              <a href="#skills" class="nav skills">Skills</a>
+            </li>
+            <li class="navli">
+              <a href="#projects" class="nav projects">Projects</a>
+            </li>
+            <li class="navli">
+              <a href="#contact" class="nav contact">Contact</a>
+            </li>
+          </ul>
+        </span>
+      </nav>
+    </header>
+    <main>
+      <section id="welcome-section">
+        <span id="paragraph">
+          <header class="welcome-header">
+            <h1>Hey there! I'm Joshua Adejola.</h1>
+          </header>
+          <p>An aspiring full-stack web developer passionate about creating impactful and user-friendly digital experiences. My goal is to create web experiences that are not only functional but also a joy to use.</p>
+          <p>From crafting intuitive user interfaces to building robust back-end systems, I enjoy the entire development process. I am actively seeking a role where I can contribute my skills to a forward-thinking team. Please take a moment to explore my projects, and let's connect if my experience aligns with your needs.</p>
+        </span>
+        <span class="image">
+          <img alt="logo" src="processed-image.png">
+        </span>
+      </section>
+      <section id="skills">
+        <!-- <h2 class="skills-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card html">
+            <div class="progress-bar">
+                <span class="skill-percentage">89%</span>
+            </div>
+            <h3 class="skill-name">HTML</h3>
+          </div>
+          <div class="skill-card css">
+            <div class="progress-bar">
+              <span class="skill-percentage">65%</span>
+            </div>
+            <h3 class="skill-name">CSS</h3>
+          </div>
+          <div class="skill-card js">
+            <div class="progress-bar">
+              <span class="skill-percentage">5%</span>
+            </div>
+            <h3 class="skill-name">JavaScript</h3>
+          </div>
+          <div class="skill-card react">
+            <div class="progress-bar">
+              <span class="skill-percentage">0%</span>
+            </div>
+            <h3 class="skill-name">React js</h3>
+          </div>  
+          <div class="skill-card rwd">
+            <div class="progress-bar">
+              <span class="skill-percentage">10%</span>
+            </div>
+            <h3 class="skill-name">Responsive Website Design</h3>
+          </div>
+        </div> -->
+        <h2 class="skills-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box">
+              <div class="skill-info">
+                <span>HTML5</span>
+                <span class="percent">89%</span>
+              </div>
+              <div class="bar-background">
+                <div class="bar-fill" style="--target-width: 89%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span class="skills-name">CSS</span>
+                    <span class="percent">65%</span>
+                </div>
+                <div class="bar-background">
+                    <div class="bar-fill" style="--target-width: 65%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+              <div class="skill-info">
+                <span class="skills-name">JavaScript</span>
+                <span class="percent">5%</span>
+              </div>
+              <div class="bar-background">
+                <div class="bar-fill" style="--target-width: 5%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <div class="skill-info">
+                <span class="skills-name">React JS</span>
+                <span class="percent">0%</span>
+              </div>
+              <div class="bar-background">
+                <div class="bar-fill" style="--target-width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <div class="skill-info">
+                <span class="skills-name">Responsive Website Design</span>
+                <span class="percent">10%</span>
+              </div>
+              <div class="bar-background">
+                <div class="bar-fill" style="--target-width: 10%;"></div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section id="projects">
+        <header class="project-subtitle">
+          Here are some of my projects:
+        </header>
+        <div class="projects-grid">
+          <a href="survey form.html" target="_blank" class="project project-tile">
+            <img class="project1-image" src="28905ce69d573731f827ccc36016afca.jpg" alt="Screenshot of my Survey Form">
+            <p class="project-title project1">
+              <span class="code">&lt;</span>
+                <span class="project-name">Survey Form</span> 
+              <span class="code">/&gt;</span>
+            </p>
+          </a>
+          <a href="tribute.html" target="_blank" class="project project-tile">
+            <img class="project2-image" src="92dfbbb30869eebb6a6255f764627215.jpg" alt="My Tribute Page">
+            <p class="project-title project2">
+              <span class="code">&lt;</span>
+                <span class="project-name">Tribute Page</span> 
+              <span class="code">/&gt;</span>
+            </p>
+          </a>
+          <a href="HTML Doc page.html" target="_blank" class="project project-tile">
+            <img class="project3-image" src="305c360323612cb27f0a9682fa10dc3b.jpg" alt="HTML Documentation Page">
+            <p class="project-title project3">
+              <span class="code">&lt;</span>
+                <span class="project-name">Documentation Page</span>
+              <span class="code">/&gt;</span>
+            </p>
+          </a>
+          <a href="landing page.html" target="_blank" class="project project-tile">
+            <img class="project4-image" src="59359d4540bd2730b19cb0eb83018e7d.jpg" alt="Landing page">
+            <p class="project-title project4">
+              <span class="code">&lt;</span>
+                <span class="project-name">Landing Page</span>
+              <span class="code">/&gt;</span>
+            </p>
+          </a>
+        </div>
+      </section>
+      <section id="contact">
+        <div>
+          <header>Ready to bring your vision to life?</header>
+          <p>Let's discuss how my skills can help you achieve your goals. <br/> Feel free to reach out to me.</p>
+        </div>
+        <div class="contact-links">
+          <ul class="contact-ul">
+            <li>
+              <a href="https://github.com/joshuakvang" class="btn contact-details">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <span>- GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/joshua_adejola" class="btn contact-details">
+                <i class="fa-brands fa-x" aria-hidden="true"></i>
+                <span>- X</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:joshuaadejola@gmail.com" class="btn contact-details">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>- Mail me.</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+09133540094" class="btn contact-details">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>- Call me.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>"The best way to predict the future is to create it." - <i>Peter Drucker</i></p>
+      <p>© 2025 Joshua Adejola. Designed by Artemisd2nd. Ciao</p>
+      <!-- <button class="btn" id="btn" type="button"> 
+        <i class="fa-solid fa-sun"></i>
+        <span>Change</span>
+      </button> -->
+    </footer>
+    <script src="script.js"></script> 
+  </body>
+</html>
+

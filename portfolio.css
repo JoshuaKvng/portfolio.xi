@@ -1,0 +1,481 @@
+/* create mirror image with css */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #aa8f76;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: grey;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    padding: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    text-decoration: undrline;
+}
+
+nav ul li {
+    display: inline;    
+    margin: 0 40px;
+    font-size: 4vh;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+nav a {
+    color: rgb(153, 30, 30);
+}
+
+nav a:hover {
+    color: #eee;
+}
+
+#welcome-section {
+    display: flex;
+    grid-column: span;
+    text-align: left;
+    padding: 200px 20px;
+    background: #c7cce0;
+    height: 40em auto;
+    width: 100% auto;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#paragraph {
+    text-align: left;
+    vertical-align: bottom;
+    margin-top: 10em;
+    margin-left: 4em;
+    margin-right: 1em;
+}
+
+#welcome-section, header {
+    color: #53b9e0;
+    font-size: larger;
+}
+
+#welcome-section p {
+    font-family: 'Times New Roman', Times, serif;
+    color: #1a1a1a;
+}
+
+
+span img {
+    top: 0;
+    margin-right: 4em;
+    margin-left: 1em;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: content-box;
+}
+
+#projects {
+    background: linear-gradient(#c7cce0, white);
+    font-family: Times New Roman;
+    color: black;
+    padding-bottom: 2rem;
+    height: 40rem;
+}
+
+.project-subtitle {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 6rem;
+}
+
+.project {
+    box-shadow: 2px 2px 2px 2px  rgba(129, 161, 175, 0.5);
+    border-radius: 2px;
+    background-color: #32e0bb;
+    color: #181818;
+    margin: 40px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    animation: slide 1s ease-out forwards;
+    animation-delay: var(--delay);
+    transition: transform 1s ease-in-out;
+}
+
+.project:nth-child(1) {
+--delay: 0s;
+}
+
+.project:nth-child(1) {
+    --delay: 0.2s;
+}
+
+.project:nth-child(3) {
+    --delay: 0.4s;
+}
+
+.projects, a:hover {
+    transform: translateY(0) scale(1.1);
+}
+
+@keyframes slide {
+to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+}
+
+a {
+    text-decoration: none;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.project:hover .code {
+    color: #ff7f50;
+}
+
+* {
+font-family: "Roboto", sans-serif;
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+
+
+.contact-links {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#contact {
+    background: linear-gradient(white 55%, cyan);
+    color: black;
+    text-align: center;
+    height: 40rem;
+    min-height: 25em;
+    vertical-align: middle;
+    margin-top: 15rem;
+}
+
+#contact header {
+    font-weight: bold;
+    font-size: 1.9rem;
+    margin-top: 0;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    margin-bottom: 0;
+}
+#contact p {
+    margin-top: 0;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    font-size: 0.9rem;
+}
+
+
+div ul {
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+margin: 0;
+padding: 0;
+}
+
+div ul li {
+list-style: none;
+margin: 0 5px;
+}
+
+div ul li a .fa-brands {
+font-size: 40px;
+color: #262626;
+line-height: 80px;
+padding-right: 14px;
+}
+
+div ul li a span {
+padding: 0;
+margin: 0;
+position: absolute;
+top: 30px;
+letter-spacing: 4px;
+transition: 0.5s;
+}
+
+div ul li a {
+text-decoration: none;
+display: absolute;
+display: block;
+width: 210px;
+height: 80px;
+background: #fff;
+padding-left: 20px;
+text-align: left;
+transform: rotate(-30deg) skew(25deg) translate(0, 0);
+transition: 0.5s;
+box-shadow: -20px 20px 10px rgba(0,0,0,0,0.5);
+}
+
+div ul li a::before {
+content: '';
+position: absolute;
+top: 10px;
+left: -20px;
+height: 100%;
+width: 20px;
+background-color: #b1b1b1;
+transform: 0.5s;
+transform: rotate(0deg) skewY(-45deg);
+}
+
+div ul li a::after {
+content: '';
+position: absolute;
+bottom: -20px;
+left: -10px;
+height: 20px;
+width: 100%;
+background: #b1b1b1;
+transform: 0.5s;
+transform: rotate(0deg) skewX(-45deg);
+}
+
+div ul li a:hover {
+transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+box-shadow: -50px -50px -50px rgba(0,0,0,0,0.5);
+}
+
+div ul li:hover .fa-brands {
+color: #fff;
+}
+
+ul li:hover span{
+color: #fff;
+}
+
+ul li:hover:nth-child(1) a{
+background: #3b5998;
+}
+
+ul li:hover:nth-child(1) a::before{
+background: #365492;
+}
+
+ul li:hover:nth-child(1) a::after{
+background: #4a69ad;
+}
+
+ul li:hover:nth-child(2) a{
+background: #00aced;
+}
+
+ul li:hover:nth-child(2) a::before{
+background: #097aa5;
+}
+
+ul li:hover:nth-child(2) a::after{
+background: #53b9e0;
+}
+
+ul li:hover:nth-child(3) a{
+background: #dd4b39;
+}
+
+ul li:hover:nth-child(3) a::before{
+background: #b33a2b;
+}
+
+ul li:hover:nth-child(3) a::after{
+background: #e66a5a;
+}
+
+ul li:hover:nth-child(4) a{
+background: #e4405f;
+}
+
+ul li:hover:nth-child(4) a::before{
+background: #d81c3f;
+}
+
+ul li:hover:nth-child(4) a::after{
+background: #e46880;
+}
+
+footer {
+    border-top: 2px solid grey;
+    background-color: cyan;
+    text-align: center;
+    color: #0d0d0e;
+    padding-bottom: 0;
+}
+
+/* @media (max-width: 1200px) {
+    .container {
+        max-width: 960px; // Adjust container width 
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Adjust project grid 
+    }
+    #contact header,
+    #contact p{
+        margin-left: 10vh;
+        margin-right: 10vh;
+    }
+} 
+
+// For screens smaller than 992px (tablets)
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px; // Adjust container width 
+    }
+
+    nav ul li {
+        margin: 0 20px; // Adjust nav item spacing 
+        font-size: 3vh;
+    }
+
+    #welcome-section {
+        padding-top: 40vh; // Adjust welcome section padding 
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; // Make projects grid single column 
+    }
+    #contact header,
+    #contact p{
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+    .contact-links a {
+        margin-left: 2%;
+    }
+}
+
+// For screens smaller than 768px (small tablets and large phones)
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px; // Adjust container width 
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; // Add vertical margin to nav items 
+    }
+    nav ul li a{
+        font-size: 2.5vh;
+    }
+
+    #welcome-section {
+        padding-top: 30vh; // Adjust welcome section padding 
+    }
+    #welcome-section p{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .contact-links {
+        flex-direction: column; // Stack contact links 
+        align-items: center;
+    }
+
+    .contact-links a {
+        margin: 10px 0; // Add vertical margin to contact links 
+        width: 80%; // Make contact links wider
+    }
+    #contact header,
+    #contact p{
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+}
+
+// For screens smaller than 576px (phones) 
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%; // Make container full width 
+        padding: 10px;
+    }
+
+    #welcome-section {
+        padding-top: 20vh; // Further adjust welcome section padding 
+    }
+    #welcome-section header h1{
+        font-size: 2rem;
+    }
+    #welcome-section p{
+        font-size: 0.8rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; // Ensure single column on small phones 
+    }
+    .project{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .contact-links a {
+        width: 95%; // Make contact links almost full width on small phones 
+    }
+    #contact header{
+        font-size: 1.5rem;
+    }
+    #contact p{
+        font-size: 0.7rem;
+    }
+    footer{
+        font-size: 0.7rem;
+    }
+}

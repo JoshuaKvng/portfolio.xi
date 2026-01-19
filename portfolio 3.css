@@ -1,0 +1,621 @@
+/* create mirror image with css */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2px;
+    margin-top: 0;
+    padding: 0;
+    color: #181818;
+    line-height: clamp(1.4, 1.5, 1.6);
+    background-color: #f4f4f4;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.container {
+    background-color: #ff232a;
+    width: 100vw;
+    height: 8vh;
+    position: fixed;
+    margin-top: -2vh;
+    justify-content: space-between;
+    z-index: 2;
+    border-radius: 0 0 8px 8px;
+}
+
+.navul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navli {
+    display: inline;
+    margin: 0 5%;
+    margin-left: -2vw;
+    font-size: 3.5vh;
+}
+
+.nav {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.nav:hover {
+    color: #96a4d3;
+}
+
+#welcome-section {
+    padding-top: 8vh;
+    text-align: left;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 10px, 20px);
+    margin-top: 2vh;
+    border-radius: 1%;
+}
+
+.welcome-header {
+    color: #000000;
+}
+
+#paragraph {
+    flex: 3;
+    margin-left: 3vw;
+}
+
+.image {
+    flex: 1;
+    width: clamp(10vw, fit-content, 40vw);
+    height: clamp(100px, fit-content, auto-fit);
+    box-sizing: content-box;
+    filter: drop-shadow(10px 10px 5px  #96a4d3);
+    margin-top: 8vh; /* Push image below navbar */
+    z-index: 1;
+    position: relative;
+}
+
+/* General section and grid styling */
+#skills {
+    padding: 50px 20px;
+    color: #fff;
+    text-align: center;
+    height: 100vh auto;
+    border-radius: 1%;
+}
+
+.skills-title {
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Styling for the circular progress bar */
+.progress-bar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* This creates the colored arc. Adjust the background color and the angle */
+    background: conic-gradient(#5cb85c 0deg, transparent 0deg);
+    transition: background 1s ease-in-out;
+}
+
+.html:hover .progress-bar::after {
+    background: conic-gradient(#5cb85c 320.4deg, transparent 320.4deg);
+}
+
+.css:hover .progress-bar::after {
+    background: conic-gradient(#5cb85c 234.0deg, transparent 234.0deg);
+}
+
+.js:hover .progress-bar::after {
+    background: conic-gradient(#5cb85c 18.0deg, transparent 18.0deg);
+}
+
+.react:hover .progress-bar::after {
+    background: conic-gradient(#5cb85c 0.0deg, transparent 0.0deg);
+}
+
+.rwd:hover .progress-bar::after {
+    background: conic-gradient(#5cb85c 36.0deg, transparent 36.0deg);
+}
+
+.skill-percentage {
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    color: #5cb85c;
+    z-index: 1; /* Ensures the percentage is on top of the arc */
+}
+
+/* Styling for the skill name */
+.skill-name {
+    font-size: 1.2em;
+    color: #aa8f76;
+}
+
+#projects {
+    font-family: Times New Roman;
+    color: black;
+    padding-top: 10vh;
+    padding-bottom: 2rem;
+    height: 100vh auto;
+    border-radius: 1%;
+}
+
+.project-subtitle {
+    color: #101020;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 6rem;
+}
+
+.project {
+    box-shadow: 3px 3px 3px 3px  #96a4d3;
+    border-radius: 6%;
+    background-color: #152046;
+    color: #a98f76;
+    margin: 40px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    animation: slide 1s ease-out forwards;
+    animation-delay: var(--delay);
+    transition: transform 1s ease-in-out;
+}
+
+.project img {
+    border-radius: 7%;
+}
+
+.project:nth-child(1) {
+--delay: 0s;
+}
+
+.project:nth-child(1) {
+    --delay: 0.2s;
+}
+
+.project:nth-child(3) {
+    --delay: 0.4s;
+}
+
+.projects a:hover {
+    transform: translateY(0) scale(1.1);
+}
+
+@keyframes slide {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.project .code {
+    display: none;
+}
+
+.project:hover .code {
+    display: inline;
+    color: #aa8f76;
+}
+
+#contact {
+    color: #a98f76;
+    border-radius: 1%;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 25vh;
+    justify-content: center;
+}
+
+.contact-links {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    min-width: 300px;
+    margin-top: 5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#contact header {
+    font-weight: bold;
+    font-size: 1.9rem;
+    margin-top: 0;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    margin-bottom: 0;
+}
+
+#contact p {
+    margin-top: 0;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding-bottom: 10vh;
+    border-bottom: 2px solid #a98f76;
+}
+
+
+.contact-ul {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-ul li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.contact-ul li a .fa-brands, .contact-ul li a .fa-solid {
+    font-size: 50px;
+    color: #a98f76;
+    line-height: 75px;
+    padding-right: 14px;
+}
+
+.contact-ul li a span {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+.contact-ul li a {
+    text-decoration: none;
+    display: absolute;
+    display: block;
+    width: 180px;
+    height: 80px;
+    background: #96a4d3;
+    padding-left: 20px;
+    text-align: left;
+    transform: rotate(-30deg) skew(25deg) translate(0, 0);
+    transition: 0.5s;
+    box-shadow: -10px 10px 5px rgba(0,0,0,0,0.5);
+}
+
+.contact-ul li a::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background-color: #b1b1b1;
+    transform: 0.5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.contact-ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #b1b1b1;
+    transform: 0.5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.contact-ul li a:hover {
+    transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+    box-shadow: -50px -50px -50px rgba(0,0,0,0,0.5);
+}
+
+.contact-ul li:hover .fa-brands {
+color: #fff;
+}
+
+.contact-ul li:hover span {
+    color: #fff;
+}
+
+.contact-ul li:hover:nth-child(1) a{
+    background: #3b5998;
+}
+
+.contact-ul li:hover:nth-child(1) a::before{
+    background: #365492;
+}
+
+.contact-ul li:hover:nth-child(1) a::after{
+    background: #4a69ad;
+}
+
+.contact-ul li:hover:nth-child(2) a{
+    background: #00aced;
+}
+
+.contact-ul li:hover:nth-child(2) a::before{
+    background: #097aa5;
+}
+
+.contact-ul li:hover:nth-child(2) a::after{
+    background: #53b9e0;
+}
+
+.contact-ul li:hover:nth-child(3) a{
+    background: #dd4b39;
+}
+
+.contact-ul li:hover:nth-child(3) a::before{
+    background: #b33a2b;
+}
+
+.contact-ul li:hover:nth-child(3) a::after{
+    background: #e66a5a;
+}
+
+.contact-ul li:hover:nth-child(4) a{
+    background: #e4405f;
+}
+
+.contact-ul li:hover:nth-child(4) a::before{
+    background: #d81c3f;
+}
+
+.contact-ul li:hover:nth-child(4) a::after{
+    background: #e46880;
+}
+
+footer {
+    color: #101010;
+    text-align: center;
+    padding: 2rem 0;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #a98f76;
+    border-bottom: 2px solid #a98f76;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Style the button */
+#btn {
+    background-color: #1a2037;
+    color: #a98f76;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #96a4d3;
+    color: #1a2037;
+}
+
+/* Style the icon within the button */
+#btn .fa-solid {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/* Media query for screens with a maximum width of 768px (common breakpoint for tablets and mobile devices) */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for the welcome section on smaller screens *//* This is the hamburger menu button */
+  .nav-toggle {
+    display: block; /* Show the button on mobile */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Make sure it's on top of the nav */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Style the hamburger lines */
+  .hamburger {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #a98f76;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #a98f76;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  /* Style the navigation menu itself for mobile */
+  .container {
+    background-color: #1a2037;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% auto;
+    min-height: 50vh;
+    /* Use transform to slide the menu in from the top */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hide the nav links on mobile by default */
+  .navul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* When the 'nav-visible' class is added by JavaScript, show the menu */
+  .nav-visible {
+    transform: translateY(0);
+  }
+
+  #welcome-section {
+    min-height: 100vh; /* Ensures the section is at least the height of the viewport */
+    width: 100%;
+    flex-direction: column; /* Stacks the content (text and image) vertically */
+    justify-content: center; /* Centers the content vertically */
+        align-items: center; /* Centers the content horizontally */
+        text-align: center; /* Centers the text within the paragraph span */
+    }
+
+    /* Adjust the logo image to be smaller on mobile */
+    .image {
+        width: 80%; /* Makes the image take up 80% of the screen width */
+        margin-top: 20px; /* Adds some space between the text and the logo */
+    }
+
+    /* Adjust the text container */
+    #paragraph {
+        margin-left: 0; /* Removes the left margin to center the text */
+        padding: 0 15px; /* Adds padding on the sides for better readability */
+    }
+
+    #contact {
+        padding-bottom: 5vh;
+    }
+
+    #contact header {
+    font-size: 1.8rem; /* Make the heading smaller */
+    padding: 0 10px; /* Add some padding to prevent it from touching the edges */
+    margin: 0 10px; /* Add some space below the header */
+    }
+
+    #contact p {
+        font-size: 1.2rem; /* Make the paragraph text smaller */
+        padding: 0 10px;
+        margin-top: 10px; /* Add some space below the header */
+        margin: 0 10px; /* Add some margin to the sides */
+    }
+
+    .contact-ul li {
+        line-height: 15px; /* Center the text vertically */
+        text-align: center; /* Center the text horizontally */
+        margin: 10px 0; /* Add vertical spacing between the list items */
+        display: flex; /* Use flexbox to align items */
+
+    }
+
+    .contact-details {
+        font-size: 1.2rem; /* Adjust this value as needed */
+        display: block; /* Ensure it behaves like a block element */
+        color: #a98f76;
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    /* Reduce the space between the list items */
+    .contact-ul {
+        gap: 8px; /* Reduces the gap from the previous 15px */
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+
+}

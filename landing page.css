@@ -1,0 +1,209 @@
+html {
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; 
+        margin: 0 auto;
+      }
+
+      #header-img {
+        width: auto, 100%;
+        height: 100%;
+        
+      }
+
+      #nav-bar {
+        position: fixed;
+        top: 0; 
+        right: 0;
+        z-index: 10; 
+      }
+
+      nav a {
+        text-decoration: none; 
+        color: rgba(252, 5, 252, 0.566); 
+        font-weight: bold; 
+        margin-left: 1em; 
+        margin-right: 1em;
+        margin-top: -1em;
+      }
+
+      nav a:hover {
+        color: #00beef; 
+      }
+
+      form {
+        text-align: center;
+        margin-top: 3em;
+        margin-bottom: 4em;
+      }
+
+      label {
+        font-family: Times New Roman;
+        color: rgb(146, 39, 63);
+        font-size: 1.5em;
+      }
+
+      form label, input {
+        margin: 1em;
+      }
+
+      #submit {
+        width: 30%;
+        height: 40%;
+        font-size: 25px;
+        padding: 4px;
+        color: rgb(128, 0, 32);
+        background-color: #FFFF00;
+        border: none;
+        border-radius: 6px;
+      }
+
+      #submit:hover {
+        background-color: rgb(94, 94, 243);
+        transform: translateY(0) scale(1.1);
+      }
+
+      #features {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      .lists {
+        list-style-type: none;
+        margin-top: 2rem;
+      }
+
+      .lists li {
+        margin-bottom: 1.5rem;
+      }
+
+      .list-title, .list-subtitle {
+        color: #00beef;
+      }
+
+      #testimonials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+
+      .video {
+        width: 560px;
+        height: 315px;  
+      }
+
+      .pricing-container {
+        display: flex;
+        justify-content: center; 
+        gap: 20px;
+        padding: 20px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+
+      .pricing-card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        width: 300px; 
+        background-color: #f9f9f9; 
+        animation: shake 0.8s ease-out;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(0) scale(1.1);
+      }
+
+      .pricing-card h3 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .price {
+        font-size: 2em;
+        color: #007bff; 
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .pricing-card.featured {
+        border-color: #007bff; 
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-card.featured .price {
+        color: #28a745;
+      }
+
+      @keyframes shake {
+        0%, 100% {transform: translateY(0)}
+        50% {transform: translateY(-10px)}
+      }
+
+      .description {
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .select-button {
+        background-color: #ffc107;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .select-button:hover {
+        background-color: #e0a800;
+      }
+
+      footer {
+        background-color: #f8f8f8;
+        padding: 30px 0;
+        text-align: center;
+        font-size: 0.9em;
+        color: #555;
+      }
+
+      footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @media (max-width: 500px) {
+        body {
+          background-color: #e0e0e0;
+        }
+
+        .pricing-container {
+          flex-direction: column;
+          align-items: center; 
+        }
+
+        .pricing-card {
+          width: 80%; 
+          margin-bottom: 20px;
+        }
+      }
+
+
+      @media (max-width: 480px) {
+        
+        h1 {
+          font-size: 2.5em;
+        }
+      }
