@@ -1,0 +1,637 @@
+/* create mirror image with css */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2px;
+    margin-top: 0;
+    padding: 0;
+    color: #f1f1f1;
+    /* background: #1e1e1e; */
+    line-height: clamp(1.4, 1.5, 1.6);
+    background: url('background\ 4\ \(1\).jpg') no-repeat center center / cover fixed;
+}
+
+/* body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+} */
+
+main {
+    flex-grow: 1;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.container {
+    background-color: #f8e8ba;
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    margin-top: -2vh;
+    justify-content: space-between;
+    z-index: 2;
+    border-radius: 0 0 8px 8px;
+}
+
+.navul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navli {
+    display: inline;
+    margin: 0 5%;
+    margin-left: clamp(1%, 3%, 4%);
+    font-size: 3.5vh;
+    align-items: left;
+}
+
+.nav {
+    color: #1e1e1e;
+    text-decoration: none;
+}
+
+.nav:hover {
+    color: #aa8f76;
+}
+
+#welcome-section {
+    padding-top: 50vh;
+    padding: 20px;
+    text-align: left;
+    min-height: 100vh;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    margin-top: vh;
+    margin-bottom: 15vh;
+    border-radius: 1%;
+    font-size: 1.2em;
+    background-color: transparent;
+}
+
+.welcome-header {
+    color: #f8e8ba;
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#paragraph {
+    flex: 3;
+    margin-left: 3vw;
+}
+
+.image {
+    flex: 1;
+    width: clamp(10vw, fit-content, 40vw);
+    height: clamp(100px, fit-content, auto-fit);
+    box-sizing: content-box;
+    filter: drop-shadow(10px 10px 5px  #96a4d3);
+    margin-top: 8vh; /* Push image below navbar */
+    z-index: 1;
+    position: relative;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* Ensures it stays centered vertically */
+    padding: 50px 0; /* Matching your dark theme */
+    color: #fff;
+}
+
+.skills-title {
+    font-size: 2em;
+    margin-bottom: 25px;
+    font-family: Times New Roman;
+    text-align: center;
+    margin-top: 0;
+}
+
+.skills-box-in {
+    background-color: #141315;
+    height: 45vh;
+    margin: 40px;
+    padding: 40px;
+    border-radius: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* 2. Spacing the skills (Grid keeps them from clashing) */
+.skills-grid {
+    display: grid;
+    height: 67vh;
+    width: 85vw; /* Limits width so it doesn't stretch too far */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+
+
+/* 3. The bar styling */
+.bar-background {
+    width: 100%;
+    height: 8px;
+    background-color: #333; /* The dark grey line from your image */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+/* 4. The Animation Logic */
+.bar-fill {
+    width: 0%; /* Start empty */
+    height: 100%;
+    background-color: #f1f1f1f1; /* The yellow/orange color */
+    transition: width 1.5s ease-in-out; /* Smooth filling effect */
+}
+
+/* Trigger color fill when the skill-box is hovered */
+.skill-box:hover .bar-fill {
+    width: var(--target-width); /* Animates to the percentage defined in HTML */
+}
+
+/* Optional: Highlight percentage text on hover */
+.skill-box:hover .percent {
+    color: #f8e8ba;
+    transition: 0.3s;
+}
+
+#projects {
+    font-family: Times New Roman;
+    padding: 80px 10%;
+    padding-top: 10vh;
+    padding-bottom: 2rem;
+    height: 100vh auto;
+    border-radius: 1%;
+}
+
+.project-subtitle {
+    color: #f1f1f1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    margin-bottom: 6rem;
+}
+
+.project {
+    /* box-shadow: 3px 2px 2px 2px  #f8e8ba; */
+    border-radius: 6px;
+    margin: 40px;
+    /* opacity: 0; */
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, .15);
+    overflow: hidden;
+    transition: 4s ease;
+    transform: translateY(50px) scale(0.8);
+    animation: slide 1s ease-in-out forwards;
+    animation-delay: var(--delay);
+    transition: transform 5s ease-in-out;
+}
+
+.project:hover {
+    transition: transform;
+    transform: scale(1.5);
+}
+
+.project img {
+    border-radius: 7.5px;
+    width: 100%;
+}
+
+.project:nth-child(1) {
+    --delay: 0s;
+}
+
+.project:nth-child(1) {
+    --delay: 0.2s;
+}
+
+.project:nth-child(3) {
+    --delay: 0.4s;
+}
+
+.projects a:hover {
+    transform: translateY(0) scale(1.1);
+}
+
+@keyframes slide {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #f8e8ba;
+}
+
+.project .code {
+    display: none;
+}
+
+.project:hover .code {
+    display: inline;
+    color: #f8e8ba;
+}
+
+#contact {
+    border-radius: 1%;
+    height: auto;
+    min-height: 100vh;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 25vh;
+    justify-content: center;
+}
+
+.contact-links {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    min-width: 300px;
+    margin-top: 5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#contact header {
+    font-weight: bold;
+    font-size: 1.9rem;
+    margin-top: 0;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    margin-bottom: 0;
+}
+
+#contact p {
+    margin-top: 0;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding-bottom: 10vh;
+    border-bottom: 2px solid #a98f76;
+}
+
+
+.contact-ul {
+    display: flex;             /* Align items in a row */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    flex-wrap: wrap;            /* Allow buttons to wrap to a new line on small screens */
+    gap: 40px;                  /* Consistent spacing between buttons */
+    margin: 50px auto;          /* Centers the container itself */
+    padding: 0;
+    list-style: none;
+    width: 100%;                /* Ensure it spans the full width */
+}
+
+.contact-ul li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.contact-ul li a .fa-brands, .contact-ul li a .fa-solid {
+    font-size: 50px;
+    color: #f8e8ba;
+    line-height: 75px;
+    padding-right: 14px;
+}
+
+.contact-ul li a span {
+    padding: 0;
+    margin: 0;
+    color: #f8e8ba;
+    position: absolute;
+    top: 30px;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+.contact-ul li a {
+    display: block;             /* Keep this */
+    position: relative;         /* CHANGE from absolute to relative */
+    width: 180px;               /* Keep your dimensions */
+    height: 80px;               /* Keep your dimensions */
+    text-decoration: none;
+    transition: 0.5s;
+    /* DELETE: top: 50%, left: 50%, transform: translate(-50%, -50%) */
+    background: #141315;
+    padding-left: 20px;
+    text-align: left;
+    transform: rotate(-30deg) skew(25deg) translate(0, 0);
+    transition: 0.5s;
+    box-shadow: -10px 10px 5px rgba(0,0,0,0,0.5);
+}
+
+.contact-ul li a::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background-color: #b1b1b1;
+    transform: 0.5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.contact-ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #b1b1b1;
+    transform: 0.5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.contact-ul li a:hover {
+    transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+    box-shadow: -50px -50px -50px rgba(0,0,0,0,0.5);
+}
+
+.contact-ul li:hover .fa-brands {
+color: #fff;
+}
+
+.contact-ul li:hover span {
+    color: #fff;
+}
+
+.contact-ul li:hover:nth-child(1) a{
+    background: #3b5998;
+}
+
+.contact-ul li:hover:nth-child(1) a::before{
+    background: #365492;
+}
+
+.contact-ul li:hover:nth-child(1) a::after{
+    background: #4a69ad;
+}
+
+.contact-ul li:hover:nth-child(2) a{
+    background: #00aced;
+}
+
+.contact-ul li:hover:nth-child(2) a::before{
+    background: #097aa5;
+}
+
+.contact-ul li:hover:nth-child(2) a::after{
+    background: #53b9e0;
+}
+
+.contact-ul li:hover:nth-child(3) a{
+    background: #dd4b39;
+}
+
+.contact-ul li:hover:nth-child(3) a::before{
+    background: #b33a2b;
+}
+
+.contact-ul li:hover:nth-child(3) a::after{
+    background: #e66a5a;
+}
+
+.contact-ul li:hover:nth-child(4) a{
+    background: #e4405f;
+}
+
+.contact-ul li:hover:nth-child(4) a::before{
+    background: #d81c3f;
+}
+
+.contact-ul li:hover:nth-child(4) a::after{
+    background: #e46880;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #a98f76;
+    border-bottom: 2px solid #a98f76;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Times New Roman;
+}
+
+/* Style the button */
+#btn {
+    background-color: #1a2037;
+    color: #a98f76;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #96a4d3;
+    color: #1a2037;
+}
+
+/* Style the icon within the button */
+#btn .fa-solid {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/* Media query for screens with a maximum width of 768px (common breakpoint for tablets and mobile devices) */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for the welcome section on smaller screens *//* This is the hamburger menu button */
+  .nav-toggle {
+    display: block; /* Show the button on mobile */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Make sure it's on top of the nav */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Style the hamburger lines */
+  .hamburger {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #f8e8ba;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f8e8ba;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  /* Style the navigation menu itself for mobile */
+  .container {
+    background-color: #f8e8ba;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% auto;
+    min-height: 30vh;
+    justify-content: left;
+    text-align: left;
+    border-bottom: 3px dotted black;
+    /* Use transform to slide the menu in from the top */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hide the nav links on mobile by default */
+  .navul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* When the 'nav-visible' class is added by JavaScript, show the menu */
+  .nav-visible {
+    transform: translateY(0);
+  }
+
+#welcome-section {
+    flex-direction: column; /* Stacks the content (text and image) vertically */
+    justify-content: center; /* Centers the content vertically */
+    align-items: center; /* Centers the content horizontally */
+    text-align: center; /* Centers the text within the paragraph span */
+
+}
+
+    /* Adjust the logo image to be smaller on mobile */
+    .image {
+        width: 80%; /* Makes the image take up 80% of the screen width */
+        margin-top: -15vh; /* Adds some space between the text and the logo */
+        margin-bottom: 1-0vh;
+    }
+
+    /* Adjust the text container */
+    #paragraph {
+        margin-left: 0; /* Removes the left margin to center the text */
+        padding: 0 15px; /* Adds padding on the sides for better readability */
+    }
+
+    #contact {
+        padding-bottom: 5vh;
+    }
+
+    #contact header {
+    font-size: 1.8rem; /* Make the heading smaller */
+    padding: 0 10px; /* Add some padding to prevent it from touching the edges */
+    margin: 0 10px; /* Add some space below the header */
+    }
+
+    #contact p {
+        font-size: 1.2rem; /* Make the paragraph text smaller */
+        padding: 0 10px;
+        margin-top: 10px; /* Add some space below the header */
+        margin: 0 10px; /* Add some margin to the sides */
+        padding-bottom: 5vh;
+        width: 90vw;
+    }
+
+    .contact-ul li {
+        line-height: 15px; /* Center the text vertically */
+        text-align: center; /* Center the text horizontally */
+        margin: 10px 0; /* Add vertical spacing between the list items */
+        display: flex; /* Use flexbox to align items */
+
+    }
+
+    .contact-details {
+        font-size: 1.2rem; /* Adjust this value as needed */
+        display: block; /* Ensure it behaves like a block element */
+        color: #a98f76;
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    /* Reduce the space between the list items */
+    .contact-ul {
+        gap: 8px; /* Reduces the gap from the previous 15px */
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+
+}
