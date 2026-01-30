@@ -635,3 +635,10 @@ footer {
 
 
 }
+
+@media (width: 414px) {
+    .skills-box-in {
+        padding-bottom: 0;
+        margin-bottom: -20px;
+    }
+}
